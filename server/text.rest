@@ -1,0 +1,49 @@
+############################################ P O S T S #############################################
+
+### post
+POST http://localhost:8080/api/posts
+Content-Type: application/json
+
+{
+        "userId":"656608e9394d0490fc6ea887",
+        "desc" : "blog post of nicky"
+}
+
+### update post
+PUT http://localhost:8080/api/posts/65660a82394d0490fc6ea896
+Content-Type: application/json
+
+{
+        "userId":"656608e9394d0490fc6ea887",
+        "imageURL":"https://13630656.rocketcdn.me/wp-content/uploads/2020/01/Golden4.jpg.webp",
+        "desc" : "now blogging"
+}
+
+### delete post
+DELETE  http://localhost:8080/api/posts/6566091f394d0490fc6ea889
+Content-Type: application/json
+
+{
+        "userId":"656605eb7b7619e4b2a50bab"
+}
+
+############################################ U S E R #############################################
+
+### REGISTER
+POST http://localhost:8080/api/auth/register 
+Content-Type: application/json
+
+{
+        "username":"nicky",
+        "email":"nicky@gmail.com",
+        "password" : "12345678"
+}
+
+### Login
+POST http://localhost:8080/api/auth/login 
+Content-Type: application/json
+
+{
+        "email":"nicky@gmail.com",
+        "password" : "12345678"
+}
