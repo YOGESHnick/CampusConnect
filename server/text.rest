@@ -5,7 +5,8 @@ POST http://localhost:8080/api/posts
 Content-Type: application/json
 
 {
-        "userId":"656608e9394d0490fc6ea887",
+        "userId":"656740684f283582b31e3bee",
+        "imageURL":"https://13630656.rocketcdn.me/wp-content/uploads/2020/01/Golden4.jpg.webp",
         "desc" : "blog post of nicky"
 }
 
@@ -34,8 +35,8 @@ POST http://localhost:8080/api/auth/register
 Content-Type: application/json
 
 {
-        "username":"nicky",
-        "email":"nicky@gmail.com",
+        "username":"gayshore",
+        "email":"gayshore@gmail.com",
         "password" : "12345678"
 }
 
@@ -44,6 +45,6 @@ POST http://localhost:8080/api/auth/login
 Content-Type: application/json
 
 {
-        "email":"nicky@gmail.com",
+        "email":"gayshore@gmail.com",
         "password" : "12345678"
 }
