@@ -42,7 +42,7 @@ app.use("/api/posts" ,notesRoute);
 
 
 mongoose.connect(
-    "mongodb://localhost:27017/blog",
+    "mongodb://localhost:27017/campusConnect",
     // { useNewUrlParser:true,useUnifiedTopology:true}
     ).then(console.log("Connected to MongoDB !")
 );

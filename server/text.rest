@@ -5,27 +5,27 @@ POST http://localhost:8080/api/posts
 Content-Type: application/json
 
 {
-        "userId":"656740684f283582b31e3bee",
+        "userId":"657093331a6c4e5eb36955ac",
         "imageURL":"https://13630656.rocketcdn.me/wp-content/uploads/2020/01/Golden4.jpg.webp",
         "desc" : "blog post of nicky"
 }
 
 ### update post
-PUT http://localhost:8080/api/posts/65660a82394d0490fc6ea896
+PUT http://localhost:8080/api/posts/6570938f1a6c4e5eb36955af
 Content-Type: application/json
 
 {
-        "userId":"656608e9394d0490fc6ea887",
+        "userId":"657093331a6c4e5eb36955ac",
         "imageURL":"https://13630656.rocketcdn.me/wp-content/uploads/2020/01/Golden4.jpg.webp",
-        "desc" : "now blogging"
+        "desc" : "now posting"
 }
 
 ### delete post
-DELETE  http://localhost:8080/api/posts/6566091f394d0490fc6ea889
+DELETE  http://localhost:8080/api/posts/6570938f1a6c4e5eb36955af
 Content-Type: application/json
 
 {
-        "userId":"656605eb7b7619e4b2a50bab"
+        "userId":"657093331a6c4e5eb36955ac"
 }
 
 ############################################ U S E R #############################################
@@ -35,8 +35,7 @@ POST http://localhost:8080/api/auth/register
 Content-Type: application/json
 
 {
-        "username":"gayshore",
-        "email":"gayshore@gmail.com",
+        "username":"21CS1244",
         "password" : "12345678"
 }
 
@@ -45,6 +44,6 @@ POST http://localhost:8080/api/auth/login
 Content-Type: application/json
 
 {
-        "email":"gayshore@gmail.com",
+        "username":"21CS1244",
         "password" : "12345678"
 }
