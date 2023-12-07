@@ -13,8 +13,6 @@ const Login = () => {
 
   const loginHandler = async(event) =>{
     event.preventDefault();
-    console.log(username);
-    console.log(password);
 
     try {
       const response =  await axios.post("http://localhost:8080/api/auth/login ",{
