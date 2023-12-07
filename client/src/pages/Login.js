@@ -64,7 +64,7 @@ const Login = () => {
       console.log(response.data.userToken);
       const token = response.data.userToken;
 
-      // Store the token in localStorage
+      // Store token in localStorage, but store aagala....but works #1. IF IT WORKS, DON'T TOUCH IT
       localStorage.setItem('userToken', token);
 
       // Redirect to the home page or perform other actions
