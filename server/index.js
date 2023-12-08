@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 require('dotenv').config();
 const cors = require('cors');
 const authRoute = require("./routes/auth");
-const notesRoute = require("./routes/posts");
+const postsRoute = require("./routes/posts");
 const passport = require("passport");
 const cookieSession = require("cookie-session");
 const session = require('express-session');
@@ -37,7 +37,7 @@ app.use(
 app.use("/api/auth", authRoute);
 
 /// P O S T  S   H A N D L E R 
-app.use("/api/posts" ,notesRoute);
+app.use("/api/posts" ,postsRoute);
 
 
 
