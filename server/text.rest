@@ -35,8 +35,8 @@ POST http://localhost:8080/api/auth/register
 Content-Type: application/json
 
 {
-        "username":"21CS1244",
-        "password" : "12345678"
+        "username":"admin",
+        "password" : "admin"
 }
 
 ### Login
