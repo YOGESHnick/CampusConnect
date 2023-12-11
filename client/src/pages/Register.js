@@ -1,15 +1,3 @@
-// import React from 'react';
-
-// const Register = () => {
-//   return (
-//     <div>
-      
-//     </div>
-//   );
-// }
-
-// export default Register;
-// src/RegistrationForm.js
 import React, { useState } from 'react';
 
 const Register = () => {
@@ -171,7 +159,7 @@ const Register = () => {
         </label>
         <br /> */}
 
-        <label>
+        {/* <label>
           Skills (comma-separated):
           <input
             type="text"
@@ -181,7 +169,7 @@ const Register = () => {
             required
           />
         </label>
-        <br />
+        <br /> */}
 
         <label>
           Username:
