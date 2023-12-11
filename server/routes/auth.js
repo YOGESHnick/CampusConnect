@@ -5,30 +5,7 @@ const jwt = require("jsonwebtoken");
 
 // R E G I S T E R 
 router.post("/register", async (req, res) => {
-  // try {
-  //   const salt = await bcrypt.genSalt(10);
-  //   const hashedPassword = await bcrypt.hash(req.body.password, salt);
-
-  //   const newUser = new User({
-  //     name:
-  //     dp:
-  //     dept:
-  //     description:
-  //     link:
-  //     experience.role:
-  //     experience.company:
-  //     experience.desc:
-  //     graduation_year:
-
-  //     username: req.body.username,
-  //     // email:req.body.email,
-  //     password: hashedPassword,
-  //   });
-
-  //   const user = await newUser.save();
-  //   // res.status(200).json(user);
-  //   res.status(201).json({ message: "User registered successfully" });
-  // } 
+  
   try {
 
     const { name, dp, dept, description, link, experience, graduation_year, friends, recommendations, skills, username, password } = req.body;
