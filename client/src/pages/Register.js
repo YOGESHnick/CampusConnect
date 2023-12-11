@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     dp: '',
@@ -23,34 +26,19 @@ const Register = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // For the skills field, split the comma-separated string into an array
-    if (name === 'skills') {
-      setFormData((prevData) => ({
-        ...prevData,
-        skills: value.split(',').map((skill) => skill.trim()),
-      }));
-    } else {
       setFormData((prevData) => ({
         ...prevData,
         [name]: value,
       }));
-    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    console.log(formData);
     try {
-      const response = await fetch('/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const result = await response.json();
-      console.log(result);
+      const response = await axios.post("http://localhost:8080/api/auth/register", formData);
+      console.log(response);
+      navigate("/home");
     } catch (error) {
       console.error(error);
     }
@@ -58,8 +46,9 @@ const Register = () => {
 
   return (
     <div className="register">
-      {/* <img src="clg.png" alt="" /> */}
       <form onSubmit={handleSubmit}>
+      <h1>Register</h1>
+      <p>Join the community</p>
         <label>
           Name:
           <input type="text" name="name" value={formData.name} onChange={handleChange} required />
