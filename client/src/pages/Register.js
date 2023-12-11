@@ -69,7 +69,8 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="register">
+      {/* <img src="clg.png" alt="" /> */}
       <form onSubmit={handleSubmit}>
         <label>
           Name:
@@ -77,11 +78,11 @@ const Register = () => {
         </label>
         <br />
 
-        <label>
+        {/* <label>
           Profile Picture URL:
           <input type="text" name="dp" value={formData.dp} onChange={handleChange} required />
         </label>
-        <br />
+        <br /> */}
 
         <label>
           Department:
@@ -89,19 +90,19 @@ const Register = () => {
         </label>
         <br />
 
-        <label>
+        {/* <label>
           Description:
           <textarea name="description" value={formData.description} onChange={handleChange} required />
         </label>
         <br />
 
         <label>
-          Link:
+          Link(Portfolio):
           <input type="text" name="link" value={formData.link} onChange={handleChange} required />
         </label>
-        <br />
+        <br /> */}
 
-        <label>
+        {/* <label>
           Experience Role:
           <input
             type="text"
@@ -134,7 +135,7 @@ const Register = () => {
             required
           />
         </label>
-        <br />
+        <br /> */}
 
         <label>
           Graduation Year:
@@ -148,7 +149,7 @@ const Register = () => {
         </label>
         <br />
 
-        <label>
+        {/* <label>
           Friends (comma-separated usernames):
           <input
             type="text"
@@ -157,9 +158,9 @@ const Register = () => {
             onChange={handleChange}
           />
         </label>
-        <br />
+        <br /> */}
 
-        <label>
+        {/* <label>
           Recommendations (comma-separated usernames):
           <input
             type="text"
@@ -168,7 +169,7 @@ const Register = () => {
             onChange={handleChange}
           />
         </label>
-        <br />
+        <br /> */}
 
         <label>
           Skills (comma-separated):
