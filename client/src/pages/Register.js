@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import avatar from '../assets/profile.png'
 
 const Register = () => {
   const navigate = useNavigate();
@@ -49,6 +50,18 @@ const Register = () => {
       <form onSubmit={handleSubmit}>
       <h1>Register</h1>
       <p>Join the community</p>
+
+      <label htmlFor="file-upload" className='custom-file-upload'>
+          <img src={avatar} alt="" />
+        </label>
+      <input 
+          type="file"
+          lable="Image"
+          name="myFile"
+          id='file-upload'
+          accept='.jpeg, .png, .jpg'
+          // onChange={(e) => handleFileUpload(e)}
+         />
         <label>
           Name:
           <input type="text" name="name" value={formData.name} onChange={handleChange} required />
