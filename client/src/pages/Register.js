@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import avatar from '../assets/profile.png'
@@ -23,7 +23,7 @@ const Register = () => {
     username: '',
     password: '',
   });
-
+  const [img, setImg] = useState("");
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -35,15 +35,29 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    const updatedFormData = { ...formData };
+    updatedFormData.dp = img;
+    console.log(updatedFormData);
+    // console.log(formData);
     try {
-      const response = await axios.post("http://localhost:8080/api/auth/register", formData);
+      const response = await axios.post("http://localhost:8080/api/auth/register", updatedFormData);
       console.log(response);
       navigate("/home");
     } catch (error) {
       console.error(error);
     }
   };
+
+  const handleFileUpload = async (e) => {
+    const file = e.target.files[0];
+    const base64 = await convertToBase64(file);
+    setImg(base64);
+    // console.log(img);
+  };
+  useEffect(() => {
+    // console.log(img);
+  }, [img]); 
+  
 
   return (
     <div className="register">
@@ -52,7 +66,7 @@ const Register = () => {
       <p>Join the community</p>
 
       <label htmlFor="file-upload" className='custom-file-upload'>
-          <img src={avatar} alt="" />
+          <img src={img||avatar} alt="" />
         </label>
       <input 
           type="file"
@@ -60,7 +74,7 @@ const Register = () => {
           name="myFile"
           id='file-upload'
           accept='.jpeg, .png, .jpg'
-          // onChange={(e) => handleFileUpload(e)}
+          onChange={(e) => handleFileUpload(e)}
          />
         <label>
           Name:
@@ -205,3 +219,16 @@ const Register = () => {
 };
 
 export default Register;
+
+function convertToBase64(file){
+  return new Promise((resolve, reject) => {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(file);
+    fileReader.onload = () => {
+      resolve(fileReader.result)
+    };
+    fileReader.onerror = (error) => {
+      reject(error)
+    }
+  })
+}
