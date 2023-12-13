@@ -45,12 +45,15 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {useGetUserId} from '../hooks/useGetUserId';
 import axios from "axios";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const userId=useGetUserId();
+    console.log(userId);
 
   const loginHandler = async (event) => {
     event.preventDefault();
@@ -61,10 +64,12 @@ const Login = () => {
         password,
       });
       console.log(response);// send _id in response 
-      console.log(response.data.userToken);
+      // console.log(response.data.userToken);
       const token = response.data.userToken;
+      const userId = response.data.userId; 
 
       // Store token in localStorage, but store aagala....but works #1. IF IT WORKS, DON'T TOUCH IT
+      localStorage.setItem('userId', userId);
       localStorage.setItem('userToken', token);
 
       // Redirect to the home page or perform other actions

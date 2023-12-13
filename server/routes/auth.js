@@ -60,7 +60,8 @@ router.post("/login", async (req, res) => {
 
     const userToken = jwt.sign({ userId: user._id }, 'your-secret-key', { expiresIn: '1h' });
     // localStorage.setItem('userToken',userToken); 
-    return res.status(200).json({ user, userToken });
+    // return res.status(200).json({ user, userToken });
+    return res.status(200).json({ userToken, userId: user._id });
 
   } catch (error) {
     console.log(error);
