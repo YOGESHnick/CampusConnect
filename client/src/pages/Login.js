@@ -60,7 +60,7 @@ const Login = () => {
         username,
         password,
       });
-      console.log(response);
+      console.log(response);// send _id in response 
       console.log(response.data.userToken);
       const token = response.data.userToken;
 
@@ -68,7 +68,9 @@ const Login = () => {
       localStorage.setItem('userToken', token);
 
       // Redirect to the home page or perform other actions
-      navigate("/home");
+      // navigate("/home");
+      navigate("/home", { state: { username, password } });
+
     } catch (error) {
       console.log(error);
     }
