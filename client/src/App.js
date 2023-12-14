@@ -22,7 +22,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
-import Home from './pages/Home';
+import Feed from './pages/Feed';
 import Register from './pages/Register';
 
 function App() {
@@ -48,7 +48,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={ <Login />} />
-          <Route path="/home" element = { isLoggedIn? <Home /> : <Navigate to="/" /> } />
+          <Route path="/feed" element = { isLoggedIn? <Feed /> : <Navigate to="/" /> } />
           {/* <PrivateRoute path="/home" element={<Home />} /> */}
           <Route path="/register" element={ <Register />} />
         </Routes>

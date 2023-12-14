@@ -29,7 +29,7 @@ const Login = () => {
 
       // Redirect to the home page or perform other actions
       // navigate("/home");
-      navigate("/home", { state: { username, password } });
+      navigate("/feed", { state: { username, password } });
 
     } catch (error) {
       console.log(error);

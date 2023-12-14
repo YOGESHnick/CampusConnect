@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import {useGetUserId} from '../hooks/useGetUserId';
 import axios from "axios";
 
-const Home = () => {
+const Feed = () => {
 
   const userId=useGetUserId();
     console.log(userId);
@@ -25,4 +25,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Feed;
