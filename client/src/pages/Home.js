@@ -1,7 +1,13 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import {useGetUserId} from '../hooks/useGetUserId';
+import axios from "axios";
 
 const Home = () => {
+
+  const userId=useGetUserId();
+    console.log(userId);
+
   const location = useLocation();
   const { state } = location;
 
@@ -13,6 +19,8 @@ const Home = () => {
       <h2>Welcome to the Home Page</h2>
       <p>Username: {username}</p>
       <p>Password: {password}</p>
+
+      <p>This is ur _id : {userId}</p>
     </div>
   );
 };
