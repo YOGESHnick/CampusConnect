@@ -42,7 +42,7 @@ const Register = () => {
     try {
       const response = await axios.post("http://localhost:8080/api/auth/register", updatedFormData);
       console.log(response);
-      navigate("/home");
+      navigate("/feed");
     } catch (error) {
       console.error(error);
     }

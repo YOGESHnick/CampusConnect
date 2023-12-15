@@ -71,3 +71,9 @@ Content-Type: application/json
   "username": "john_doe",
   "password": "securePassword"
 }
+
+### GET USER
+GET  http://localhost:8080/api/auth/user/657c11add202c965862dce22
+
+
+# 6572d3cb55c36458700286d6

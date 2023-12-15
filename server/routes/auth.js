@@ -69,4 +69,11 @@ router.post("/login", async (req, res) => {
   }
 });
 
+// GET USER
+router.get("/user/:id", async(req,res)=>{
+  const user = await User.findOne({ _id: req.params.id });
+  const { username, password, ...userData } = user.toObject();
+  return res.status(200).json(userData);
+});
+
 module.exports = router;
