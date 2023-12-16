@@ -47,6 +47,7 @@
 import React, { useState, useEffect } from "react";
 import { useGetUserId } from '../hooks/useGetUserId';
 import axios from "axios";
+import avatar from '../assets/profile.png'
 
 const Feed = () => {
   const [user, setUser] = useState();
@@ -74,7 +75,7 @@ const Feed = () => {
     <div>
       <h2>Welcome to the Home Page</h2>
       <p>Username: {user?.name || 'USER'}</p>
-      <img src={user?.dp || 'profile.png'} alt="img" />
+      <img src={user?.dp || avatar} alt="img" />
       <p>This is ur _id: {userId}</p>
     </div>
   );
