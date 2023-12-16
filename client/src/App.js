@@ -48,7 +48,9 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={ <Login />} />
-          <Route path="/feed" element = { isLoggedIn? <Feed /> : <Navigate to="/" /> } />
+          {/* <Route path="/feed" element = { isLoggedIn? <Feed /> : <Navigate to="/" /> } /> */}
+          {/* use above line, use below line for testing css */}
+          <Route path="/feed" element={ <Feed />} />
           {/* <PrivateRoute path="/home" element={<Home />} /> */}
           <Route path="/register" element={ <Register />} />
         </Routes>

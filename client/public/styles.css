@@ -107,3 +107,23 @@ input[type="file"] {
     width: 50px;
     height: 50px;
   }
+
+
+  /* F E E D  */
+
+  .Feed{
+    display: flex;
+  }
+  .LeftBar{
+    background-color: #525151;
+    text-align: center;
+    justify-content: center;
+    height: 96vh;
+    padding: min(2vh,3vh);
+    overflow-y: scroll;
+  }
+  .LeftBar img{
+    object-fit: cover;
+    max-width: 5vh;
+    border-radius: 50%;
+  }
