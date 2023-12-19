@@ -10,6 +10,8 @@ const LeftBar = ({ userId, user }) => {
     <div className="LeftBar">
       <img src={user?.dp || avatar} alt="img" />
       <p>{user?.name || "USER"}</p>
+      <p>{user?.description || "Description"}</p>
+      <p>{user?.dept || "Dept"}</p>
     </div>
   );
 };
@@ -18,8 +20,18 @@ const LeftBar = ({ userId, user }) => {
 
 const Posts = () => {
   return (
-    <div>
-      <h1>Posts</h1>
+    <div className="Posts">
+      <h1>Posts PostsPosts PostsPosts PostsPosts PostsPosts</h1>
+    </div>
+  );
+};
+
+const QuickAccess = () => {
+  return (
+    <div className="QuickAccess">
+      <h3>Quick Links</h3>
+      <a href="#" >Portal</a>
+      <a href="#" >Clg</a>
     </div>
   );
 };
@@ -53,7 +65,10 @@ const Feed = () => {
       <Navbar />
       <div className="Feed">
         <LeftBar userId={userId} user={user} />
-        <Posts />
+        <div className="center">
+          <Posts />
+        </div>
+        <QuickAccess />
       </div>
     </div>
   );

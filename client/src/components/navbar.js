@@ -7,10 +7,10 @@ const Navbar = () => {
             <input type="text" />
         </div>
         <div className="right">
-            <a href="#">Home</a>
-            <a href="#">Article</a>
-            <a href="#">Messaging</a>
-            <a href="#">Profile</a>
+            <a href="/feed">Home</a>
+            <a href="/feed">Article</a>
+            <a href="/feed">Messaging</a>
+            <a href="/feed">Profile</a>
         </div>
     </div>
   );

@@ -109,6 +109,7 @@ input[type="file"] {
   }
 
   /* N A V B A R */
+
   .navbar{
     height: 8vh;
     width: 100vw;
@@ -137,8 +138,9 @@ input[type="file"] {
     background-color: #F3EEE7;
   }
   .LeftBar{
+    margin-left: 5vh;
+    margin-top: 5vh;
     border-radius: 2vh;
-    /* margin-top: 10vh; */
     background-color: #121536;
     text-align: center;
     justify-content: center;
@@ -148,7 +150,47 @@ input[type="file"] {
   }
   .LeftBar img{
     object-fit:contain;
-    /* max-height: 5vh; */
     max-width: 5vh;
     border-radius: 50%;
   }
+  .center{
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin-top: 15vh;
+    margin-left: 2vw;
+    overflow-y: scroll;
+    width: 50vw;
+  }
+  .QuickAccess{
+    display: flex;
+    flex-direction: column;
+    margin-right: 5vh;
+    margin-top: 5vh;
+    border-radius: 2vh;
+    background-color: #121536;
+    width: 10vw;
+    text-align: center;
+    justify-content:space-around;
+    height: 20vh;
+    padding: min(2vh,3vh);
+    color: #F3EEE7;;
+  }
+  .QuickAccess a{
+    color: #F3EEE7;
+    text-decoration: none;
+  }
+  @media screen and (max-width: 768px) {
+    .QuickAccess,.LeftBar {
+        display: none;
+    }
+    .Feed{
+        justify-content: center;
+        text-align: center;
+    }
+    .Posts{
+        width:100%;
+    }
+    .center{
+        width: 90vw;
+    }
+}
