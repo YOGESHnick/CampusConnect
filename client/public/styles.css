@@ -108,22 +108,47 @@ input[type="file"] {
     height: 50px;
   }
 
+  /* N A V B A R */
+  .navbar{
+    height: 8vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #F3EEE7;
+  }
+  .navbar a{
+    color: #F3EEE7;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .right a{
+    margin-right: 1.5vw;
+  }
+  .right a:last-child {
+    margin-right: 0;
+  }
 
   /* F E E D  */
 
   .Feed{
     display: flex;
+    height: 100vh;
+    background-color: #F3EEE7;
   }
   .LeftBar{
-    background-color: #525151;
+    border-radius: 2vh;
+    /* margin-top: 10vh; */
+    background-color: #121536;
     text-align: center;
     justify-content: center;
-    height: 96vh;
+    height: 20vh;
     padding: min(2vh,3vh);
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
   }
   .LeftBar img{
-    object-fit: cover;
+    object-fit:contain;
+    /* max-height: 5vh; */
     max-width: 5vh;
     border-radius: 50%;
   }
