@@ -179,6 +179,25 @@ input[type="file"] {
     color: #F3EEE7;
     text-decoration: none;
   }
+  .NewPost{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .NewPost img{
+    max-width: 4vh;
+    border-radius: 50%;
+    object-fit:cover;
+  }
+  .NewPost form{
+    align-items: center;
+    justify-content: center;
+  }
+  .NewPost form input{
+    width:15vw;
+    height: 5vh;
+    border-radius: 10px;
+  }
   @media screen and (max-width: 768px) {
     .QuickAccess,.LeftBar {
         display: none;
