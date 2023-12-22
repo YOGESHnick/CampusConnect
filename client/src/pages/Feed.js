@@ -134,9 +134,9 @@ const Feed = () => {
     return (
       <div className="Posts">
         {posts?.map((post) => (
-          <div key={post._id}>
+          <div className="Post" key={post._id}>
+            <img className="postImage" src={post.image} alt="" />
             <p>{post.desc}</p>
-            <img src={post.image} alt="" />
           </div>
         ))}
       </div>

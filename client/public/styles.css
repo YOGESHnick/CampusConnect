@@ -213,3 +213,24 @@ body{
         width: 90vw;
     }
 }
+/* P O S T S    S T Y L I N G  */
+.Posts{
+  margin-right: 1vw;
+}
+.Post{
+  border:2px solid #121536;
+  background-color: #121536;;
+  text-align: center;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.Post p{
+  text-align: left;
+}
+.postImage{
+  object-fit: contain;
+  size: 100%;
+  width: 50vw;
+  height: 30vh;
+}
