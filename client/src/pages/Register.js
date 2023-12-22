@@ -144,6 +144,7 @@ const Register = () => {
         <label>
           Graduation Year:
           <input
+            className="reg"
             type="text"
             name="graduation_year"
             value={formData.graduation_year}

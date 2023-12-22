@@ -1,6 +1,11 @@
 ############################################ P O S T S #############################################
 
 ### post
+
+###
+GET http://localhost:8080/api/posts/allPosts
+
+####
 POST http://localhost:8080/api/posts
 Content-Type: application/json
 

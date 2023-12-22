@@ -23,17 +23,33 @@ const LeftBar = ({ userId, user }) => {
 const NewPost = ({ userId, user }) => {
   const navigate = useNavigate();
   const [description, setDescription] = useState("");
+  const [img, setImg] = useState("");
 
-  const postHandler = async (event) => {
-    // event.preventDefault();
+  const handleFileUpload = async (e) => {
+    const file = e.target.files[0];
+    const base64 = await convertToBase64(file);
+    setImg(base64);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8080/api/posts", {
-        userId:userId,
-        desc:description,
-      });
+      const postData = {
+        userId: userId,
+        desc: description,
+        image: img,
+      };
+
+      const response = await axios.post("http://localhost:8080/api/posts", postData);
+
+      // Clear the form after successful submission
+      setDescription("");
+      setImg("");
+
+      console.log(response);
       navigate("/feed");
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -41,15 +57,29 @@ const NewPost = ({ userId, user }) => {
     <div className="NewPost">
       <img src={user?.dp || avatar} alt="img" />
       <div>
-        <form onSubmit={postHandler}>
-          {/* <img src={user?.dp || avatar} alt="img" /> */}
-          <input type="text" placeholder="Share your thoughts" value={description} onChange={(event) => setDescription(event.target.value)} />
-          <button>Post</button>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Share your thoughts"
+            value={description}
+            onChange={(event) => setDescription(event.target.value)}
+          />
+          <input
+            type="file"
+            accept=".jpeg, .png, .jpg"
+            onChange={(e) => handleFileUpload(e)}
+          />
+          <a href="/article">
+            <button>Article</button>
+          </a>
+          <button type="submit">Post</button>
         </form>
       </div>
     </div>
   );
 };
+
+
 
 const Posts = () => {
   return (
@@ -71,6 +101,7 @@ const QuickAccess = () => {
 
 const Feed = () => {
   const [user, setUser] = useState();
+  const [posts,setPosts]=useState();
   const userId = useGetUserId();
   console.log(userId);
 
@@ -86,12 +117,25 @@ const Feed = () => {
       }
     };
 
+    const fetchPosts = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:8080/api/posts/allPosts"
+        );
+        setPosts(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
     fetchUser();
+    fetchPosts();
   }, [userId]);
 
   useEffect(() => {
     console.log("Updated user:", user);
-  }, [user]);
+    console.log("Posts:", posts);
+  }, [user,posts]);
 
   return (
     <div className="feed">
@@ -109,3 +153,16 @@ const Feed = () => {
 };
 
 export default Feed;
+
+function convertToBase64(file){
+  return new Promise((resolve, reject) => {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(file);
+    fileReader.onload = () => {
+      resolve(fileReader.result);
+    };
+    fileReader.onerror = (error) => {
+      reject(error)
+    }
+  })
+}

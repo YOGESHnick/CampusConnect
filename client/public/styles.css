@@ -89,7 +89,7 @@ body{
     border-radius: 10px;
 }
 
-input[type="file"] {
+.reg input[type="file"] {
     display: none;
   }
   
