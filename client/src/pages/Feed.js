@@ -40,7 +40,10 @@ const NewPost = ({ userId, user }) => {
         image: img,
       };
 
-      const response = await axios.post("http://localhost:8080/api/posts", postData);
+      const response = await axios.post(
+        "http://localhost:8080/api/posts",
+        postData
+      );
 
       // Clear the form after successful submission
       setDescription("");
@@ -79,16 +82,6 @@ const NewPost = ({ userId, user }) => {
   );
 };
 
-
-
-const Posts = () => {
-  return (
-    <div className="Posts">
-      <h1>Posts PostsPosts PostsPosts PostsPosts PostsPosts</h1>
-    </div>
-  );
-};
-
 const QuickAccess = () => {
   return (
     <div className="QuickAccess">
@@ -101,7 +94,7 @@ const QuickAccess = () => {
 
 const Feed = () => {
   const [user, setUser] = useState();
-  const [posts,setPosts]=useState();
+  const [posts, setPosts] = useState();
   const userId = useGetUserId();
   console.log(userId);
 
@@ -135,8 +128,20 @@ const Feed = () => {
   useEffect(() => {
     console.log("Updated user:", user);
     console.log("Posts:", posts);
-  }, [user,posts]);
+  }, [user, posts]);
 
+  const Posts = ({ posts }) => {
+    return (
+      <div className="Posts">
+        {posts?.map((post) => (
+          <div key={post._id}>
+            <p>{post.desc}</p>
+            <img src={post.image} alt="" />
+          </div>
+        ))}
+      </div>
+    );
+  };
   return (
     <div className="feed">
       <Navbar />
@@ -144,7 +149,7 @@ const Feed = () => {
         <LeftBar userId={userId} user={user} />
         <div className="center">
           <NewPost userId={userId} user={user} />
-          <Posts />
+          <Posts posts={posts} />
         </div>
         <QuickAccess />
       </div>
@@ -154,7 +159,7 @@ const Feed = () => {
 
 export default Feed;
 
-function convertToBase64(file){
+function convertToBase64(file) {
   return new Promise((resolve, reject) => {
     const fileReader = new FileReader();
     fileReader.readAsDataURL(file);
@@ -162,7 +167,7 @@ function convertToBase64(file){
       resolve(fileReader.result);
     };
     fileReader.onerror = (error) => {
-      reject(error)
-    }
-  })
+      reject(error);
+    };
+  });
 }
