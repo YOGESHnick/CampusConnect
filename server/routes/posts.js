@@ -5,8 +5,8 @@ const Post = require("../models/Post");
 
 router.get("/allPosts", async (req, res) => {
   try {
-    const posts = await Post.find();
-    // const posts = await Post.find().populate("userId");
+    // const posts = await Post.find();
+    const posts = await Post.find().populate("userId");
     res.status(200).json(posts);
   } catch (error) {
     console.error(error);

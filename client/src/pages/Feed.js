@@ -86,8 +86,8 @@ const QuickAccess = () => {
   return (
     <div className="QuickAccess">
       <h3>Quick Links</h3>
-      <a href="#">Portal</a>
-      <a href="#">Clg</a>
+      <a target="_blank" rel="noreferrer" href="http://portal.stjosephstechnology.ac.in/portal/">Portal</a>
+      <a target="_blank" rel="noreferrer" href="http://portal.stjosephstechnology.ac.in/portal/">Clg</a>
     </div>
   );
 };
@@ -132,16 +132,20 @@ const Feed = () => {
 
   const Posts = ({ posts }) => {
     return (
-      <div className="Posts">
-        {posts?.map((post) => (
-          <div className="Post" key={post._id}>
-            <img className="postImage" src={post.image} alt="" />
-            <p>{post.desc}</p>
-          </div>
-        ))}
-      </div>
+        <div className="Posts">
+            {posts?.map((post) => (
+                <div className="Post" key={post._id}>
+                    <img className="postImage" src={post.image} alt="" />
+                    <p>{post.desc}</p>
+                    <p>User: {post.userId?.name || "Unknown User"}</p>
+                </div>
+            ))}
+        </div>
     );
-  };
+};
+
+
+
   return (
     <div className="feed">
       <Navbar />

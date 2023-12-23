@@ -89,7 +89,8 @@ body{
     border-radius: 10px;
 }
 
-.reg input[type="file"] {
+/* display none for input button, but uses the image as image selector  */
+.reg {
     display: none;
   }
   
@@ -103,7 +104,7 @@ body{
     cursor: pointer;
   }
   
-  .custom-file-upload > img{
+  .custom-file-upload  img{
     width: 50px;
     height: 50px;
   }
@@ -138,7 +139,8 @@ body{
     background-color: #F3EEE7;
   }
   .LeftBar{
-    margin-left: 10vw;
+    width:18vw ;
+    margin-left: 7.5vw;
     margin-top: 5vh;
     border-radius: 2vh;
     background-color: #121536;
@@ -162,17 +164,27 @@ body{
     overflow-y: scroll;
     width: 40vw;
   }
+  ::-webkit-scrollbar {
+    display: none;
+    width: 2px;
+}
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(179, 179, 179);
+}
   .NewPost{
     margin-bottom: 1vh;
   }
   .QuickAccess{
+    width:18vw;
     display: flex;
     flex-direction: column;
-    margin-right: 5vh;
+    /* margin-right: 5vh; */
     margin-top: 5vh;
     border-radius: 2vh;
     background-color: #121536;
-    width: 10vw;
     text-align: center;
     justify-content:space-around;
     height: 20vh;

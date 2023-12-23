@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 
 const postSchema = new mongoose.Schema({
     userId: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User", // Reference to the User model
         required: true,
     },
     desc: {
