@@ -149,6 +149,7 @@ const Feed = () => {
         <LeftBar userId={userId} user={user} />
         <div className="center">
           <NewPost userId={userId} user={user} />
+          <hr />
           <Posts posts={posts} />
         </div>
         <QuickAccess />
