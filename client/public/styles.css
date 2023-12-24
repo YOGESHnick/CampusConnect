@@ -146,7 +146,7 @@ body{
     background-color: #121536;
     text-align: center;
     justify-content: center;
-    height: 20vh;
+    height: 25vh;
     padding: min(2vh,3vh);
     /* overflow-y: scroll; */
   }
@@ -278,4 +278,7 @@ body{
   .Posts{
     margin-bottom: 5vh;
   }
+}
+.QuickAccess hr{
+  width: 100%;
 }

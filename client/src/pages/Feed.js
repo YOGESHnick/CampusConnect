@@ -12,6 +12,7 @@ const LeftBar = ({ userId, user }) => {
     <div className="LeftBar">
       <img src={user?.dp || avatar} alt="img" />
       <p>{user?.name || "USER"}</p>
+      <hr />
       <p>{user?.description || "Description"}</p>
       <p>{user?.dept || "Dept"}</p>
     </div>
@@ -86,6 +87,7 @@ const QuickAccess = () => {
   return (
     <div className="QuickAccess">
       <h3>Quick Links</h3>
+      <hr />
       <a target="_blank" rel="noreferrer" href="http://portal.stjosephstechnology.ac.in/portal/">Portal</a>
       <a target="_blank" rel="noreferrer" href="http://portal.stjosephstechnology.ac.in/portal/">Clg</a>
     </div>
