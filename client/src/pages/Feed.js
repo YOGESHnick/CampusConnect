@@ -135,9 +135,14 @@ const Feed = () => {
         <div className="Posts">
             {posts?.map((post) => (
                 <div className="Post" key={post._id}>
+                    <div className="postHeader">
+                      <img src={post.userId?.dp || avatar} alt="" />
+                      <p>{post.userId?.name || "Unknown User"}</p>
+                    </div>
+                    <hr />
                     <img className="postImage" src={post.image} alt="" />
+                    <hr />
                     <p>{post.desc}</p>
-                    <p>User: {post.userId?.name || "Unknown User"}</p>
                 </div>
             ))}
         </div>
