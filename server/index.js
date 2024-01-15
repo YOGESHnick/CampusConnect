@@ -5,10 +5,10 @@ require('dotenv').config();
 const cors = require('cors');
 const authRoute = require("./routes/auth");
 const postsRoute = require("./routes/posts");
-const passport = require("passport");
+// const passport = require("passport");
 const cookieSession = require("cookie-session");
 const session = require('express-session');
-const passportStrategy = require("./passport");
+// const passportStrategy = require("./passport");
 
 
 const app = express();
