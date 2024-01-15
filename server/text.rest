@@ -59,7 +59,7 @@ POST http://localhost:8080/api/auth/register
 Content-Type: application/json
 
 {
-  "name": "John Doe",
+  "name": "bJohny Doe",
   "dp": "https://example.com/profile.jpg",
   "dept": "Engineering",
   "description": "A passionate engineer",
@@ -73,7 +73,7 @@ Content-Type: application/json
   "friends": [],
   "recommendations": [],
   "skills": ["JavaScript", "React", "Node.js"],
-  "username": "john_doe",
+  "username": "johny_doe",
   "password": "securePassword"
 }
 

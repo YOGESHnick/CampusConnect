@@ -42,7 +42,8 @@ app.use("/api/posts" ,postsRoute);
 
 
 mongoose.connect(
-    "mongodb://localhost:27017/campusConnect",
+	"mongodb+srv://shamlinlearning:zJuHgQMxwcKWlB8B@zander.n6hxill.mongodb.net/campusConnect?retryWrites=true&w=majority"
+    // "mongodb://localhost:27017/campusConnect",
     // { useNewUrlParser:true,useUnifiedTopology:true}
     ).then(console.log("Connected to MongoDB !")
 );
